@@ -1,6 +1,7 @@
 import pygame as pg
 from Ball import *
 from Paddle import *
+import time
 
 class Game:
     def __init__(self):
@@ -14,6 +15,9 @@ class Game:
         self.paddle_rects = [self.LeftPaddle.Rect, self.RightPaddle.Rect]
 
         self.Ball = Ball()
+
+        self.SpeedIncreaseTimer = pg.event.custom_type()
+        pg.time.set_timer(self.SpeedIncreaseTimer, 5000)
 
         self.running = True
 
@@ -51,6 +55,9 @@ class Game:
                         self.LeftPaddle.should_move = False
                     elif event.key == pg.K_DOWN or event.key == pg.K_UP:
                         self.RightPaddle.should_move = False
+                elif event.type == self.SpeedIncreaseTimer:
+                    self.Ball.increase_speed()
+
 
         pg.QUIT
 

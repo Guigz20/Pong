@@ -6,12 +6,15 @@ class Ball(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self)
         self.screen = pg.display.get_surface()
 
-        initial_speed_coeff = random.random()/2
-        print("Initial Speed Coeff: ", initial_speed_coeff)
+        self.initial_speed_coeff = random.random()/4
+        self.speed_increase_coeff = 1.1
+
+
         self.ball_size = 10
 
         self.pos = [400, 300]
-        self.vel = [random.choice([-1, 1])*initial_speed_coeff, random.choice([-1, 1])*(0.5-initial_speed_coeff)]
+        self.vel = [random.choice([-1, 1])*self.initial_speed_coeff,
+                    random.choice([-1, 1])*(0.25-self.initial_speed_coeff)]
         print(self.vel)
 
         self.Rect = pg.rect.Rect(400, 300, self.ball_size*2, self.ball_size*2)
@@ -33,4 +36,13 @@ class Ball(pg.sprite.Sprite):
         if self.Rect.collidelist(padlle_rects) != -1:
             self.vel[0] = -self.vel[0]
             self.pos[0] += self.vel[0]*2
+
+    def increase_speed(self):
+        self.vel = [self.vel[0]*self.speed_increase_coeff, self.vel[1]*self.speed_increase_coeff]
+
+    def reset(self):
+        self.initial_speed_coeff = random.random() / 4
+        self.pos = [400, 300]
+        self.vel = [random.choice([-1, 1]) * self.initial_speed_coeff,
+                    random.choice([-1, 1]) * (0.25 - self.initial_speed_coeff)]
 
