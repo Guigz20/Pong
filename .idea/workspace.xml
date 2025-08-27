@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="172fdad0-25ea-482d-a84b-c3e6c36882db" name="Changes" comment="First commit, Window and Paddles without movement">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="172fdad0-25ea-482d-a84b-c3e6c36882db" name="Changes" comment="Paddle movement and collision added">
+      <change afterPath="$PROJECT_DIR$/Scripts/Ball.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/Paddle.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Paddle.py" afterDir="false" />
     </list>
@@ -121,11 +121,28 @@
       <option name="project" value="LOCAL" />
       <updated>1756305961080</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Paddle movement and collision added">
+      <option name="closed" value="true" />
+      <created>1756316180839</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1756316180839</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Paddle movement and collision added">
+      <option name="closed" value="true" />
+      <created>1756316188152</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756316188152</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit, Window and Paddles without movement" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit, Window and Paddles without movement" />
+    <MESSAGE value="Paddle movement and collision added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Paddle movement and collision added" />
   </component>
 </project>
