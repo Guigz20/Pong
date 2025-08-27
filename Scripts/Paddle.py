@@ -11,9 +11,12 @@ class Paddle(pg.sprite.Sprite):
 
         self.should_move = False
         self.direction = 1
+        self.Rect = pg.Rect((self.pos[0], self.pos[1]), (self.size[0], self.size[1]))
 
     def draw(self):
-        pg.draw.rect(self.screen, (255, 255, 255), pg.Rect(self.pos[0], self.pos[1], self.size[0], self.size[1]))
+        pg.draw.rect(self.screen, (255, 255, 255), self.Rect)
+        self.Rect.x = self.pos[0]
+        self.Rect.y = self.pos[1]
 
     def move(self):
         if self.should_move:

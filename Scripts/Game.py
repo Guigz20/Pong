@@ -1,5 +1,5 @@
 import pygame as pg
-
+from Ball import *
 from Paddle import *
 
 class Game:
@@ -11,6 +11,10 @@ class Game:
         self.RightPaddle = Paddle(750)
         self.PaddleSpeed = 0.5
 
+        self.paddle_rects = [self.LeftPaddle.Rect, self.RightPaddle.Rect]
+
+        self.Ball = Ball()
+
         self.running = True
 
     def loop(self):
@@ -19,7 +23,10 @@ class Game:
             self.draw()
 
             self.LeftPaddle.move()
+            self.paddle_rects[0] = self.LeftPaddle.Rect
             self.RightPaddle.move()
+            self.paddle_rects[1] = self.RightPaddle.Rect
+            self.Ball.move(self.paddle_rects)
 
             pg.display.flip()
 
@@ -52,6 +59,7 @@ class Game:
 
         self.LeftPaddle.draw()
         self.RightPaddle.draw()
+        self.Ball.draw()
 
 if __name__ == '__main__':
     game = Game()
