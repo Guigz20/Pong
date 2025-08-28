@@ -13,12 +13,14 @@ class Paddle(pg.sprite.Sprite):
         self.direction = 1
         self.Rect = pg.Rect((self.pos[0], self.pos[1]), (self.size[0], self.size[1]))
 
+        self.Speed = 260
+
     def draw(self):
         pg.draw.rect(self.screen, (255, 255, 255), self.Rect)
         self.Rect.x = self.pos[0]
         self.Rect.y = self.pos[1]
 
-    def move(self):
+    def move(self, dt: int):
         if self.should_move:
             if self.pos[1] < 0:
                 self.pos[1] = 0
@@ -27,4 +29,4 @@ class Paddle(pg.sprite.Sprite):
                 self.pos[1] = 600 - self.size[1]
 
             else:
-                self.pos[1] += self.direction
+                self.pos[1] += self.direction*dt*self.Speed

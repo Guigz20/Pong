@@ -10,11 +10,13 @@ class Game:
 
         self.LeftPaddle = Paddle(50)
         self.RightPaddle = Paddle(750)
-        self.PaddleSpeed = 0.5
+
 
         self.paddle_rects = [self.LeftPaddle.Rect, self.RightPaddle.Rect]
 
         self.Ball = Ball()
+
+        self.clock = pg.time.Clock()
 
         self.SpeedIncreaseTimer = pg.event.custom_type()
         pg.time.set_timer(self.SpeedIncreaseTimer, 5000)
@@ -24,13 +26,16 @@ class Game:
     def loop(self):
         while self.running:
 
+            dt = self.clock.tick(60)/1000
+            print(dt)
+
             self.draw()
 
-            self.LeftPaddle.move()
+            self.LeftPaddle.move(dt)
             self.paddle_rects[0] = self.LeftPaddle.Rect
-            self.RightPaddle.move()
+            self.RightPaddle.move(dt)
             self.paddle_rects[1] = self.RightPaddle.Rect
-            self.Ball.move(self.paddle_rects)
+            self.Ball.move(self.paddle_rects, dt)
 
             pg.display.flip()
 
@@ -40,16 +45,16 @@ class Game:
                 elif event.type == pg.KEYDOWN:
                     if event.key == pg.K_s:
                         self.LeftPaddle.should_move = True
-                        self.LeftPaddle.direction = self.PaddleSpeed
+                        self.LeftPaddle.direction = 1
                     elif event.key == pg.K_w:
                         self.LeftPaddle.should_move = True
-                        self.LeftPaddle.direction = -self.PaddleSpeed
+                        self.LeftPaddle.direction = -1
                     elif event.key == pg.K_UP:
                         self.RightPaddle.should_move = True
-                        self.RightPaddle.direction = -self.PaddleSpeed
+                        self.RightPaddle.direction = -1
                     elif event.key == pg.K_DOWN:
                         self.RightPaddle.should_move = True
-                        self.RightPaddle.direction = self.PaddleSpeed
+                        self.RightPaddle.direction = 1
                 elif event.type == pg.KEYUP:
                     if event.key == pg.K_s or event.key == pg.K_w:
                         self.LeftPaddle.should_move = False
@@ -57,7 +62,6 @@ class Game:
                         self.RightPaddle.should_move = False
                 elif event.type == self.SpeedIncreaseTimer:
                     self.Ball.increase_speed()
-
 
         pg.QUIT
 
