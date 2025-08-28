@@ -2,6 +2,9 @@ import pygame as pg
 import random
 import math
 
+import pygame.draw
+
+
 class Ball(pg.sprite.Sprite):
     def __init__(self):
         pg.sprite.Sprite.__init__(self)
@@ -28,6 +31,7 @@ class Ball(pg.sprite.Sprite):
         pg.draw.circle(self.screen, (255,255,255), self.pos, self.ball_size)
         self.Rect.x = self.pos[0] - self.ball_size
         self.Rect.y = self.pos[1] - self.ball_size
+
 
     def move(self, padlle_rects, dt):
         self.pos[0] += self.vel[0]*dt*self.speed
