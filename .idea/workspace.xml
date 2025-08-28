@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="172fdad0-25ea-482d-a84b-c3e6c36882db" name="Changes" comment="Ball movement and collision added">
-      <change beforePath="$PROJECT_DIR$/Scripts/Ball.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Ball.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Game.py" afterDir="false" />
-    </list>
+    <list default="true" id="172fdad0-25ea-482d-a84b-c3e6c36882db" name="Changes" comment="Ball speed ajustements" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,13 +149,22 @@
       <option name="project" value="LOCAL" />
       <updated>1756318218154</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ball speed ajustements">
+      <option name="closed" value="true" />
+      <created>1756327707293</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1756327707293</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit, Window and Paddles without movement" />
     <MESSAGE value="Paddle movement and collision added" />
     <MESSAGE value="Ball movement and collision added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ball movement and collision added" />
+    <MESSAGE value="Ball speed ajustements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ball speed ajustements" />
   </component>
 </project>
